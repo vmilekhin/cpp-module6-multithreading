@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.20)
+project(multithreading LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+add_executable(race_condition race_condition.cpp)
+add_executable(fixed_mutex fixed_mutex.cpp)
+add_executable(fixed_atomic fixed_atomic.cpp)
+add_executable(thread_pool thread_pool.cpp)
+
+find_package(Threads REQUIRED)
+target_link_libraries(race_condition PRIVATE Threads::Threads)
+target_link_libraries(fixed_mutex PRIVATE Threads::Threads)
+target_link_libraries(fixed_atomic PRIVATE Threads::Threads)
+target_link_libraries(thread_pool PRIVATE Threads::Threads)

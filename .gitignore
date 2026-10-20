@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+build/
+race_condition
+fixed_mutex
+fixed_atomic
+thread_pool
+*.o
